@@ -1,0 +1,222 @@
+{
+	"info": {
+		"_postman_id": "696a47b5-d38b-4e96-b590-2faabf412a1a",
+		"name": "CODIFIN",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api/posts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwt-token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/posts?page-size=10&page-number=1",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "page-size",
+							"value": "10"
+						},
+						{
+							"key": "page-number",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/posts/all",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwt-token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/posts",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Name\": \"Bernardino.chin@gmail.com\",\r\n    \"UserName\": \"bernardino.chin@gmail.com\",\r\n    \"Password\": \"Inicial#2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/users",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/users/authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UserName\": \"bernardino.chin2@gmail.com\",\r\n    \"Password\": \"Inicial#22\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/users/authenticate",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"users",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/posts/initialize-data",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwt-token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/posts/initialize-data",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"posts",
+						"initialize-data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/comments/initialize-data",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwt-token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/comments/initialize-data",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"comments",
+						"initialize-data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/users/refresh-token",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base-url",
+			"value": "https://localhost:44308/api",
+			"type": "default"
+		},
+		{
+			"key": "jwt-token",
+			"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYmVybmFyZGluby5jaGluQGdtYWlsLmNvbSIsImV4cCI6MTY4NDU0MDUwMSwiaWF0IjoxNjg0NTM5OTAxLCJuYmYiOjE2ODQ1Mzk5MDF9.1Ej6TWEXjrp8rZIzVQ9PgEVdh5CzSEIdTFdA87EhBZU",
+			"type": "default"
+		}
+	]
+}
